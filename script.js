@@ -89,5 +89,15 @@ particlesJS('particles', {
 
 // Send Email button functionality
 document.getElementById('sendEmail').addEventListener('click', function() {
-    window.location.href = 'mailto:angeloarias007@gmail.com?subject=Opportunity%20Inquiry&body=Hi%20Christian,%20I%20would%20like%20to%20discuss%20a%20potential%20opportunity%20with%20you.';
+    const subject = encodeURIComponent('Opportunity Inquiry - Virtual Assistant Position');
+    const body = encodeURIComponent(`Hi Christian,
+
+I hope this email finds you well. I came across your portfolio and I'm impressed with your technical skills and experience in remote tech support.
+
+I would like to discuss a potential opportunity with you. Please let me know when would be a good time to connect.
+
+Best regards,`);
+    
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=angeloarias007@gmail.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
 });
